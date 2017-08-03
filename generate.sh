@@ -23,7 +23,7 @@ SUBJ_ST="Illinois"
 SUBJ_L="Chicago"
 SUBJ_O="University of Illinois at Chicago"
 SUBJ_OU="ACCC User Services"
-SUBJ_STR="/C=$SUBJ_C/ST=$SUBJ_ST/L=$SUBJ_L/O=$SUBJ_O/OU=$SUBJ_OU/emailAddress=$3"
+SUBJ_STR="/C=$SUBJ_C/ST=$SUBJ_ST/L=$SUBJ_L/O=$SUBJ_O/OU=$SUBJ_OU/CN=$2/emailAddress=$3"
 
 ###### DO NOT MODIFY BELOW THIS LINE! ######
 
