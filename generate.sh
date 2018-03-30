@@ -22,7 +22,7 @@ SUBJ_C="US"
 SUBJ_ST="Illinois"
 SUBJ_L="Chicago"
 SUBJ_O="University of Illinois at Chicago"
-SUBJ_OU="ACCC User Services"
+SUBJ_OU="ACCC Client Service Solutions"
 SUBJ_STR="/C=$SUBJ_C/ST=$SUBJ_ST/L=$SUBJ_L/O=$SUBJ_O/OU=$SUBJ_OU/CN=$2/emailAddress=$3"
 
 ###### DO NOT MODIFY BELOW THIS LINE! ######
@@ -44,10 +44,10 @@ function validate_input () {
     echo "INVALID Fully Qualified Domain Name(FQDN)."
     ERROR=true
   fi
-
-  if ! [[ "$3" =~ "^[a-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]*[a-z0-9])?\$" ]]
+  shopt -s nocasematch
+  if ! [[ "$3" =~ ^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$ ]]
   then
-    echo "INVALID contact email address."
+    echo "INVALID contact email address: $3"
     ERROR=true
   fi
 
