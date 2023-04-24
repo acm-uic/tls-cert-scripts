@@ -1,7 +1,7 @@
 #/bin/bash
 # Author: Chase Lee <clee231@uic.edu>
 # Description: Generates new keys and certificate signing requests(CSRs) for a given servername.
-# Version: 1.0.3
+# Version: 1.0.4
 # Requirements: 
 #    - OpenSSL 0.9.8e-fips-rhel5 or newer
 #    - Bash 3.2.25 or newer 
@@ -12,7 +12,7 @@
 
 PROG_VER="1.0.3"
 PROG_STR="Key and CSR generator by Chase Lee - Version "$PROG_VER
-HELP_STR="usage: "$0" serverName FQDN contactEmail\n\nEXAMPLE: $0 cso cso.uic.edu clee231@uic.edu\n\n$# arguments found."
+HELP_STR="usage: "$0" serverName FQDN contactEmail\n\nEXAMPLE: $0 cso cso.uic.edu sigsysadmin@acm.cs.uic.edu\n\n$# arguments found."
 GEN_STR="Generating Server Key and CSR..."
 GEN_FOLDER="Creating Folder..."
 
@@ -22,7 +22,7 @@ SUBJ_C="US"
 SUBJ_ST="Illinois"
 SUBJ_L="Chicago"
 SUBJ_O="University of Illinois at Chicago"
-SUBJ_OU="Technology Solutions Service Desk"
+SUBJ_OU="Computer Science"
 SUBJ_STR="/C=$SUBJ_C/ST=$SUBJ_ST/L=$SUBJ_L/O=$SUBJ_O/OU=$SUBJ_OU/CN=$2/emailAddress=$3"
 
 ###### DO NOT MODIFY BELOW THIS LINE! ######
