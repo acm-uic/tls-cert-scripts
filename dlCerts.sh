@@ -39,13 +39,13 @@ fi
 for i in ${TYPES[@]}; do
 OUTPUT=$(curl -i --request GET "https://cert-manager.com/customer/InCommon/ssl?action=download&sslId=$id&format=${i}")
 
-SAVE_AS=$(echo "$OUTPUT" | awk '/filename=/{print $3}' | cut -c10-)
+SAVE_AS=$(echo "$OUTPUT" | awk '/filename=/{print $3}' | cut -c10- | tr -d '"')
 SAVE_AS=${SAVE_AS%$'\r'}
 SAVE_AS=${SAVE_AS%$'\n'}
 SAVE_AS=${SAVE_AS%$'\r\n'}
 
 IFS='.' read -ra SAVE_AS_MOD <<< "$SAVE_AS"
-echo "Filename is: $SAVE_AS"
+echo "Filename is: ${SAVE_AS_MOD[0]}.${i}.${SAVE_AS_MOD[1]}"
 
 $(echo "$OUTPUT" | awk '/(\r|\r\n|\n)/{y=1;next}y' >> $folder/${SAVE_AS_MOD[0]}.${i}.${SAVE_AS_MOD[1]})
 done
