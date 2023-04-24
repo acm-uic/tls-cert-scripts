@@ -25,24 +25,26 @@ This will allow you to generate cert assets en-masse.
   id.  (Use this after the certificate has been issued.)
 
 
+* acm/generate.sh
+  This is a customized script to generate the key and certificate signing
+  requests for the multi-domain certificate that ACM utilizes.
+
 State of Affairs
 ----------------
 
-August 02, 2017 - The User Services Development Team was informed that 
-                  certificates MUST be issued by Comodo, rather than having 
-                  Let's Encrypt automatically do this for us. :-( 
+April 24, 2023 - Scripts and repo brought over for public use. Some updates 
+                 have been made to accommodate use in the ACM@UIC.
+
+August 02, 2017 - The Development Team was informed that certificates MUST 
+                  be issued by Comodo, rather than having Let's Encrypt
+                  automatically do this for us. :-( 
                   At least we already have these scripts written. 
 
-February 9, 2017 - Qualys will drop VM1 & 2 grade from C to F this month. 
-                   See ticket (#278)[https://misc.cso.uic.edu/redmine/issues/278].
-                   VMs don't actually support the newer standards...
-                   Probably will forever be capped at C. Need new VMs... and 
-                   for package managers to actually work!
+February 9, 2017 - Qualys will drop SHA1 certifcate grades from C to F this month. 
 
 January 1, 2017 - Browsers (Chrome leading) is dropping SHA-1 trust. 
                   Certificates will not be trusted.  Switching to Let's Encrypt
                   as needed. Provides nice tool to automatically renew certs!
 
-October 5, 2015 - Generation scripts written. Manual SSL generation process
-                  documented on the Wiki.
+October 5, 2015 - Generation scripts written.
 
